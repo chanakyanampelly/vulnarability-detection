@@ -1,0 +1,24 @@
+html
+CopyEdit
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Detector</title>
+</head>
+<body>
+    <h1>Phishing Email Detector</h1>
+    <form method="post">
+        <textarea name="email_content" rows="15" cols="80" placeholder="Paste email content here..."></textarea><br><br>
+        <button type="submit">Scan Email</button>
+    </form>
+
+    {% if result %}
+    <hr>
+    <h2>Result:</h2>
+    <p><strong>Verdict:</strong> {{ result.verdict }}</p>
+    <p><strong>Score:</strong> {{ result.score }}</p>
+    <p><strong>Suspicious Keywords:</strong> {{ result.keywords }}</p>
+    <p><strong>Suspicious URLs:</strong> {{ result.urls }}</p>
+    {% endif %}
+</body>
+</html>
